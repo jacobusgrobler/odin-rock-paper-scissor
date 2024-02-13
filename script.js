@@ -9,12 +9,17 @@
 //he knows them already
 //where will we put its choices
 //he will manually type it in as a parameter as per instructions
-const getPlayerChoice = function (str) {
+
+const getPlayerChoice = function () {
+    
+    const str = prompt()
     return str.toLowerCase();
+    
 };
 
-const playerSelection = getPlayerChoice('rock');
+const playerSelection = getPlayerChoice();
 console.log(playerSelection);
+
 
 
 
@@ -41,6 +46,7 @@ const getComputerChoice = function () {
 //where will we put the computer's output
 //place the computer selection in a variable
 const computerSelection = getComputerChoice();
+const computerTurn = getComputerChoice()
 console.log(computerSelection);
 
 //how will we make the human and the computer play together
@@ -54,25 +60,58 @@ console.log(computerSelection);
 //scissor vs paper = scissor
 //samesies = draw
 //lets use the human input as the first operand and work around that
+let humanScore = 0;
+let computerScore = 0;
+
 function playRound (playerChoice, computerChoice) {
-                
+    
     if (playerChoice === computerChoice) {
         return( `You Made Drawzies`);
-    }  if (playerChoice === 'rock' && computerChoice === 'scissor') {
-        return( `Human Wins! Computer Sucks`) ;
-    }  if (playerChoice === 'scissor' && computerChoice === 'paper') {
-        return( `Human Wins! Computer Sucks`);
-    }  if (playerChoice === 'paper' && computerChoice === 'rock') {
-        return( `Human Wins! Computer Sucks`);
-    }  if (playerChoice === 'rock' && computerChoice === 'paper') {
-        return( `Computer Wins! Human Sucks`);
-    }  if (playerChoice === 'paper' && computerChoice === 'scissor') {
-        return( `Computer Wins! Human Sucks`);
-    }  if (playerChoice === 'scissor' && computerChoice === 'rock') {
-        return( `Computer Wins! Human Sucks`);
-    }
+    } else if (playerChoice === 'rock' && computerChoice === 'scissor') {
+        return (`Human Wins! Computer Sucks`), humanScore++;   
+    } else if (playerChoice === 'scissor' && computerChoice === 'paper') {
+        return(`Human Wins! Computer Sucks`), humanScore++;
+    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        return(`Human Wins! Computer Sucks`), humanScore++;
+    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
+        return(`Computer Wins! Human Sucks`), computerScore++;
+    } else if (playerChoice === 'paper' && computerChoice === 'scissor') {
+        return(`Computer Wins! Human Sucks`), computerScore++;
+    } else if (playerChoice === 'scissor' && computerChoice === 'rock') {
+        return( `Computer Wins! Human Sucks`), computerScore++;
+    }   
+    
     
 }
 
-console.log(playRound(playerSelection, computerSelection ))
+console.log(playRound(playerSelection, computerSelection))
+
+const pointHuman = humanScore; 
+console.log(typeof pointHuman, pointHuman)
+const pointComputer = computerScore;  
+console.log(typeof pointComputer, pointComputer)
+
+
+
+const theCount = function(human, computer) {
+   let totalHuman = [];
+   let totalComputer = [];
+   if(human === 1) {
+       totalHuman.push(1)
+    }else if (computer === 1) {
+        totalComputer.push(1);
+    }
+    console.log(totalHuman);
+    console.log(totalComputer);
+    getPlayerChoice()
+}
+theCount(pointHuman, pointComputer)
+
+
+
+
+//how do we create a counter for the game to get an ultimate winner
+//we will have to put the count somewhere.
+//then we will have to accumulate the counter
+//we can only accumulate the counter with comparing the if operation results and attaching an action to that result
 
