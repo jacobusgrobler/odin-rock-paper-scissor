@@ -5,15 +5,17 @@
 
 //How do we make the human play.
 //As per instruction he has to input via the console
-//we give him three choices he knows them already
+//we give him three choices 
+//he knows them already
 //where will we put its choices
-//we can link the user input to a variable 
-const playerSelection = function () {
-    return 'rock'
+//he will manually type it in as a parameter as per instructions
+const getPlayerChoice = function (str) {
+    return str.toLowerCase();
 };
-console.log(playerSelection())
-//how will the human choose
-//he will have to use his fingers and type.
+
+const playerSelection = getPlayerChoice('rock');
+console.log(playerSelection);
+
 
 
 
@@ -40,3 +42,37 @@ const getComputerChoice = function () {
 //place the computer selection in a variable
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
+
+//how will we make the human and the computer play together
+//we will have to compare their output 
+//how will we compare there output
+//we will have to compare the values of the variables that we created with the original functions 
+//they each have three options how will we cater for a win a loss and a draw
+//how many variable results do we have 
+//rock vs scissor = rock
+//rock vs paper = paper
+//scissor vs paper = scissor
+//samesies = draw
+//lets use the human input as the first operand and work around that
+function playRound (playerChoice, computerChoice) {
+                
+    if (playerChoice === computerChoice) {
+        return( `You Made Drawzies`);
+    }  if (playerChoice === 'rock' && computerChoice === 'scissor') {
+        return( `Human Wins! Computer Sucks`) ;
+    }  if (playerChoice === 'scissor' && computerChoice === 'paper') {
+        return( `Human Wins! Computer Sucks`);
+    }  if (playerChoice === 'paper' && computerChoice === 'rock') {
+        return( `Human Wins! Computer Sucks`);
+    }  if (playerChoice === 'rock' && computerChoice === 'paper') {
+        return( `Computer Wins! Human Sucks`);
+    }  if (playerChoice === 'paper' && computerChoice === 'scissor') {
+        return( `Computer Wins! Human Sucks`);
+    }  if (playerChoice === 'scissor' && computerChoice === 'rock') {
+        return( `Computer Wins! Human Sucks`);
+    }
+    
+}
+
+console.log(playRound(playerSelection, computerSelection ))
+
