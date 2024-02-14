@@ -15,11 +15,11 @@ Rock Paper Scissor Game
 
 
 //how will we let the computer play
-  //How do we give it 3 options
+//How do we give it 3 options
 
-  //The computer must make a random selection between three options
-  //link the options to a number and let it randomly pick a number
-  //where will we put the computer's output
+//The computer must make a random selection between three options
+//link the options to a number and let it randomly pick a number
+//where will we put the computer's output
 //place the computer selection in a variable
 
 //how will we make the human and the computer play together
@@ -38,4 +38,9 @@ Rock Paper Scissor Game
 //we will have to put the count somewhere.
 //then we will have to accumulate the counter
 //we can only accumulate the counter with comparing the if operation results and attaching an action to that result
+
+SYNOPSYS 
+CODE IS STILL BUGGY THE ISSUE IS THE LOOP THE INITIAL EXECUTION DOES NOT EXECUTE THE SCRIPT ENTIRELY.
+THE COUNTERS AS WELL SEEMS TO MISS FIRE SOME TIMES NOT UPDATING THE SCORE WITH THE IMMEDIATE AFTER THE LOOP IS RUN
+I'M SURE THIS IS FIXABLE BUT I'M TIRED NOW
 
