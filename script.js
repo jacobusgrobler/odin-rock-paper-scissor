@@ -26,10 +26,10 @@ function playGame() {
       let computerScore = 0;
       
       
-      function playRound(player, computer) {
+      //function playRound(player, computer) {
 
     
-    alert(`Human is ${player},Computer is ${computer}`)
+    // alert(`Human is ${player},Computer is ${computer}`)
 
      if (player === computer) {
       return "Drawzies"
