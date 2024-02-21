@@ -24,12 +24,12 @@ function playGame() {
 
       let humanScore = 0;
       let computerScore = 0;
-      console.log(humanScore, computerScore)
+      
       
       function playRound(player, computer) {
 
     
-        console.log(`Human is ${player},Computer is ${computer}`)
+    alert(`Human is ${player},Computer is ${computer}`)
 
      if (player === computer) {
       return "Drawzies"
@@ -40,6 +40,7 @@ function playGame() {
               ) 
               {
                 humanScore = humanScore +1;
+                
       
      }else if (
                 (player === "scissor" && computer === "rock") ||
@@ -47,23 +48,19 @@ function playGame() {
                 (player === "rock" && computer === "paper")
               )          
               {
-                computerScore = computerScore +1;}
-       
-     console.log(humanScore, computerScore)
-    }
-
-    
+                computerScore = computerScore +1;}       
+     
+    }    
     
     for (let i = 0; i <= 5; i++) {
-       console.log(playRound(getPlayerChoice(), getComputerChoice()))
-       //console.log(`Human is ${playerSelection},Computer is ${computerSelection}`)
+      console.log(playRound(getPlayerChoice(), getComputerChoice()))
     } 
     
     if (humanScore > computerScore) {
         console.log(`${humanScore} | ${computerScore} Suck it computer you lucked out` )
     } if (humanScore < computerScore) {
       console.log(`${computerScore} | ${humanScore} Suck it human you lucked out` )
-    } else {console.log(`Drawzies`)}
+    } else {console.log(`Drawzies Final`)}
     
    
 }
