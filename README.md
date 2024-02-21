@@ -62,3 +62,20 @@ Required changes
 --Style this so that it is flexible.
 --Model it so that it can flex from desktop to mobile 
 
+-How will we implement the logic
+--Not sure but I think lets start with linking our buttons to the logic via the query selector
+--Once this is done we can create a function for the button click functionality
+--But first let's scrap the loop and incapsulating function completely
+--ok 
+
+--Ok so we linked our buttons and tested the functionality with the rock button the console log was successful.
+-What do we want to happen if we click the rock button.
+--We want a round to be played
+-What constitutes a round being played
+-- 1 Clicking the button should generate a player one selection and a player two selection 
+    2 The selections should be compared 
+     3 From the comparison you must determine a winner or a draw
+      4 The outcome should then be the input for the score at the bottom
+--Ok lets try and do point 1
+
+

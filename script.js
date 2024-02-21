@@ -1,68 +1,55 @@
-function playGame() {
-
-    const getPlayerChoice = function () {
-        const str = prompt();
-        return str.toLowerCase();
-      };
-      let playerSelection = getPlayerChoice();
-
-      const getComputerChoice = function () {
-        const select0 = "rock";
-        const select1 = "paper";
-        const select2 = "scissor";
-      
-        const selector = Math.trunc(Math.random() * 3);
-      
-        if (selector === 1) {
-          return select0;
-        } else if (selector === 2) {
-          return select1;
-        } else return select2;
-      };
-      let computerSelection = getComputerChoice();
 
 
-      let humanScore = 0;
-      let computerScore = 0;
-      
-      
-      //function playRound(player, computer) {
+const btnRock = document.querySelector('.rock');
+const btnPaper = document.querySelector('.paper');
+const btnScissor = document.querySelector('.scissors')
 
-    
-    // alert(`Human is ${player},Computer is ${computer}`)
+const random = function () {
+  const select0 = "rock";
+  const select1 = "paper";
+  const select2 = "scissor";
 
-     if (player === computer) {
-      return "Drawzies"
-     }else if (
-                (player === "rock" && computer === "scissors") ||
-                (player === "scissors" && computer === "paper") ||
-                (player === "paper" && computer === "rock")
-              ) 
-              {
-                humanScore = humanScore +1;
-                
-      
-     }else if (
-                (player === "scissor" && computer === "rock") ||
-                (player === "paper" && computer === "scissor") ||
-                (player === "rock" && computer === "paper")
-              )          
-              {
-                computerScore = computerScore +1;}       
-     
-    }    
-    
-    for (let i = 0; i <= 5; i++) {
-      console.log(playRound(getPlayerChoice(), getComputerChoice()))
-    } 
-    
-    if (humanScore > computerScore) {
-        console.log(`${humanScore} | ${computerScore} Suck it computer you lucked out` )
-    } if (humanScore < computerScore) {
-      console.log(`${computerScore} | ${humanScore} Suck it human you lucked out` )
-    } else {console.log(`Drawzies Final`)}
-    
-   
+  const selector = Math.trunc(Math.random() * 3);
+
+  if (selector === 1) {
+    return select0;
+  } else if (selector === 2) {
+    return select1;
+  } else return select2;
 }
 
-  playGame()
+btnRock.addEventListener('click', function() {
+  const playerOneRock = btnRock.textContent.trim().toLocaleLowerCase();
+  console.log(playerOneRock)
+
+const getComputerChoice = function () {
+  return random();
+}
+let cmpSelect =  getComputerChoice()
+console.log(cmpSelect)
+
+})
+
+btnPaper.addEventListener('click', function() {
+  const playerOnePaper = btnPaper.textContent.trim().toLocaleLowerCase();
+  console.log(playerOnePaper)
+
+  const getComputerChoice = function () {
+    return random()
+  }
+  let cmpSelect =  getComputerChoice()
+  console.log(cmpSelect)
+})
+
+btnScissor.addEventListener('click', function() {
+  const playerOneScissor = btnScissor.textContent.trim().toLocaleLowerCase();
+  console.log(playerOneScissor)
+
+  const getComputerChoice = function () {
+    return random()
+  }
+  let cmpSelect =  getComputerChoice()
+  console.log(cmpSelect)
+})
+
+
