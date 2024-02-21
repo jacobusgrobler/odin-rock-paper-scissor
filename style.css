@@ -1,60 +1,83 @@
 * {
     padding: 1px;
     margin: 1px;
+    font-family: crackman;
 }
+
+@font-face {
+    font-family: crackman;
+    src: url(fonts/Crackman\ Front.otf);
+  }
 
 .body-container{
     border: 2px solid black;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    padding-left: 10%;
+    padding-top: 2%;
     padding-right: 10%;
+    padding-bottom: 2%;
+    padding-left: 10%;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 110), rgb(255, 8, 0));
+    text-align: center;
+    font-size: 25px;
+}
+
+.heading{
+    font-size: 100px;
 }
 
 .button-container{
     border: 2px solid black;
+    margin: 50px 200px 10px 200px;
     padding: 5px;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(to bottom right, rgb(230, 62, 11), rgb(22, 36, 231));
 }
 
 .horizontal{
+    display: flex;
     border: 2px solid black;
-    padding: 5px;
+    padding: 100px;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .btn{
     border: 2px solid black;
-    padding: 5px;
+    padding-right: 5px;
     max-height: fit-content;
     max-width: fit-content;
+    min-height: 100px;
+    min-width: 100px;
+    font-size: 18px;
 }
 .rock{
     border: 2px solid black;
     padding: 5px;
-    background-color: brown;
+    background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .paper{
     border: 2px solid black;
     padding: 5px;
-    background-color: blue;
+    background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .scissors{
     border: 2px solid black;
     padding: 5px;
-    background-color: pink;
+    background-image: linear-gradient(to bottom right,rgb(67, 70, 220), rgb(230, 90, 80));
 }
 
 
 .output-container{
     border: 2px solid black;
+    margin: 10px 200px 100px 200px;
     padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(to bottom right, rgb(230, 62, 11), rgb(22, 36, 231));
 }
 
 .score{
