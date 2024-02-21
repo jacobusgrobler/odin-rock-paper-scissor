@@ -39,9 +39,26 @@ Rock Paper Scissor Game
 //then we will have to accumulate the counter
 //we can only accumulate the counter with comparing the if operation results and attaching an action to that result
 
+Below issues might not be relevant with required changes
 SYNOPSYS 
 CODE IS STILL BUGGY THE ISSUE IS THE LOOP THE INITIAL EXECUTION DOES NOT EXECUTE THE SCRIPT ENTIRELY.
 THE COUNTERS AS WELL SEEMS TO MISS FIRE SOME TIMES NOT UPDATING THE SCORE WITH THE IMMEDIATE AFTER THE LOOP IS RUN
 I'M SURE THIS IS FIXABLE BUT I'M TIRED NOW
 
+Required changes
+-Remove logic that plays 5 rounds
+-Human player input now buttons
+-Buttons must trigger round
+-Display results in console, running score and final winner
+-First one to 5 wins
+
+--Removing the 5 round limit and changing the human player input goes hand in hand.
+--We will have to remove the loop
+--The button for human selection will trigger the round ie. the computer selection
+-Will this button trigger the output as well 
+--No this will be triggered by the result of the comparison as it will determine the output
+
+--First add HTML element required for button input
+--Style this so that it is flexible.
+--Model it so that it can flex from desktop to mobile 
 
