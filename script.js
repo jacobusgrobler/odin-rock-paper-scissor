@@ -7,6 +7,7 @@ const playGame = function() {
     const btnRock = document.querySelector('.rock');
     const btnPaper = document.querySelector('.paper');
     const btnScissor = document.querySelector('.scissors');
+    const machine = document.querySelector('.playertwooutput');
     
 
     const playerOneOptions = [btnRock, btnPaper, btnScissor];
@@ -18,8 +19,13 @@ const playGame = function() {
         const random = Math.floor(Math.random() * playerTwoOptions.length);
         const playerTwoChoice = playerTwoOptions[random];
         console.log(option.textContent, playerTwoChoice)
+        machine.textContent = playerTwoChoice;
 
         roundWinner(option.textContent, playerTwoChoice)
+        if (playerOneScore === 5 || playerTwoScore === 5){
+        gameResult()
+        }
+        
       })
     })
   }
@@ -35,7 +41,7 @@ const playGame = function() {
     comp = comp.toLowerCase();
 
     if (human === comp) {
-      result.textContent = "DRAWZIES!!";
+      return result.textContent = "DRAWZIES!!";
     } if (
       (human === 'rock' && comp === 'scissors') ||
       (human === 'paper' && comp === 'rock') ||
@@ -49,8 +55,28 @@ const playGame = function() {
       playerTwoScore++;
       pTwoScore.textContent = playerTwoScore;
     }
-  
+     
   }
+  const gameResult = function(playerOneScore, playerTwoScore) {
+    const gameOver = document.querySelector('.output-container');
+    const playAgain = document.querySelector('.tryagain');
+    console.log(playerOneScore, playerTwoScore);
+    if (playerOneScore > playerTwoScore && playerOneScore >= 5) {
+      gameOver.style.fontSize = '70px';
+      gameOver.style.verticalAlign = 'center';
+      gameOver.style.paddingBottom = '70px';
+      gameOver.textContent = "PLAYER ONE WINS";
+      playAgain.style.opacity = "1"
+    }else {
+      gameOver.style.fontSize = '70px';
+      gameOver.style.verticalAlign = 'center';
+      gameOver.style.paddingBottom = '70px';
+      gameOver.textContent = "PLAYER TWO WINS";
+      playAgain.style.opacity = "1"
+    }
+    playAgain.addEventListener('click', () => window.location.reload())
+  }
+  
   cycle()
 }
 playGame()

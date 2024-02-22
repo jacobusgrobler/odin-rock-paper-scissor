@@ -10,10 +10,9 @@
   }
 
 .body-container{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding-top: 2%;
     padding-right: 10%;
-    padding-bottom: 2%;
     padding-left: 10%;
     display: flex;
     flex-direction: column;
@@ -23,28 +22,39 @@
 }
 
 .heading{
+    margin-top: -25px;
     font-size: 100px;
 }
 
 .button-container{
-    border: 2px solid black;
-    margin: 50px 200px 10px 200px;
+    /* border: 2px solid black; */
+    margin: 10px 200px 10px 200px;
     padding: 5px;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(to bottom right, rgb(230, 62, 11), rgb(22, 36, 231));
 }
+.tryagain{
+    max-height: fit-content;
+    max-width: fit-content;
+    min-height: 100px;
+    min-width: 100px;
+    margin-left: -105px;
+    background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
+    opacity: 0;
+    font-size: 18px;
+}
 
 .horizontal{
     display: flex;
-    border: 2px solid black;
-    padding: 100px;
+    /* border: 2px solid black; */
+    padding: 70px;
     justify-content: space-between;
     gap: 25px;
 }
 
 .btn{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding-right: 5px;
     max-height: fit-content;
     max-width: fit-content;
@@ -53,25 +63,25 @@
     font-size: 18px;
 }
 .rock{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .paper{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .scissors{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right,rgb(67, 70, 220), rgb(230, 90, 80));
 }
 
 
 .output-container{
-    border: 2px solid black;
-    margin: 10px 200px 100px 200px;
+    /* border: 2px solid black; */
+    margin: 10px 200px 50px 200px;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -80,22 +90,22 @@
     background-image: linear-gradient(to bottom right, rgb(230, 62, 11), rgb(22, 36, 231));
 }
 
-.score{
-    border: 2px solid black;
+.playertwooutput{
+    border: 2px solid rgb(105, 5, 5);
     padding: 5px;
 }
 
 .player1{
-    border: 2px solid black;
+    border: 2px solid rgb(105, 5, 5);
     padding: 5px;
 }
 
 .player2{
-    border: 2px solid black;
+    border: 2px solid rgb(105, 5, 5);
     padding: 5px;
 }
 
 .winner{
-    border: 2px solid black;
+    border: 2px solid rgb(105, 5, 5);
     padding: 5px;
 }
