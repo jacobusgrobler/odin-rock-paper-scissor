@@ -39,7 +39,6 @@ const playGame = function() {
   const roundWinner = function(human, comp) {    
 
     human = human.toLowerCase();
-    console.log(human, comp);
     comp = comp.toLowerCase();
 
     if (human === comp) {
