@@ -1,7 +1,7 @@
 const playGame = function() {
   let playerOneScore = 0;
   let playerTwoScore = 0;
-  
+  const firstToFive = 5
 
   const cycle = function() {
     const btnRock = document.querySelector('.rock');
@@ -18,11 +18,10 @@ const playGame = function() {
       option.addEventListener('click', function() {
         const random = Math.floor(Math.random() * playerTwoOptions.length);
         const playerTwoChoice = playerTwoOptions[random];
-        console.log(option.textContent, playerTwoChoice)
         machine.textContent = playerTwoChoice;
 
         roundWinner(option.textContent, playerTwoChoice)
-        if (playerOneScore === 5 || playerTwoScore === 5){
+        if (playerOneScore === firstToFive || playerTwoScore === firstToFive){
         gameResult()
         }
         
@@ -50,6 +49,7 @@ const playGame = function() {
       result.textContent = 'PLAYER ONE WINS!';
       playerOneScore++;
       pOneScore.textContent = playerOneScore;
+      return
     } else {
       result.textContent = 'PLAYER TWO WINS!';
       playerTwoScore++;
@@ -60,6 +60,8 @@ const playGame = function() {
   const gameResult = function(playerOneScore, playerTwoScore) {
     const gameOver = document.querySelector('.output-container');
     const playAgain = document.querySelector('.tryagain');
+    const p2 = document.querySelector('.score');
+
     console.log(playerOneScore, playerTwoScore);
     if (playerOneScore > playerTwoScore && playerOneScore >= 5) {
       gameOver.style.fontSize = '70px';
@@ -71,7 +73,7 @@ const playGame = function() {
       gameOver.style.fontSize = '70px';
       gameOver.style.verticalAlign = 'center';
       gameOver.style.paddingBottom = '70px';
-      gameOver.textContent = "PLAYER TWO WINS";
+      gameOver.textContent = `PLAYER TWO WINS`;
       playAgain.style.opacity = "1"
     }
     playAgain.addEventListener('click', () => window.location.reload())
