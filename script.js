@@ -41,11 +41,11 @@ const playGame = function() {
       (human === 'paper' && comp === 'rock') ||
       (human === 'scissors' && comp === 'paper')
     ) {
-      result.textContent = 'Player One wins!';
+      result.textContent = 'PLAYER ONE WINS!';
       playerOneScore++;
       pOneScore.textContent = playerOneScore;
     } else {
-      result.textContent = 'Player Two Wins!';
+      result.textContent = 'PLAYER TWO WINS!';
       playerTwoScore++;
       pTwoScore.textContent = playerTwoScore;
     }
