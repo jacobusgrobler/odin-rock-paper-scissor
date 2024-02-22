@@ -1,14 +1,21 @@
 const playGame = function() {
   let playerOneScore = 0;
   let playerTwoScore = 0;
-  const firstToFive = 5
+  const firstToFive = 5;
 
-  const cycle = function() {
-    const btnRock = document.querySelector('.rock');
-    const btnPaper = document.querySelector('.paper');
-    const btnScissor = document.querySelector('.scissors');
-    const machine = document.querySelector('.playertwooutput');
-    
+  const btnRock = document.querySelector('.rock');
+  const btnPaper = document.querySelector('.paper');
+  const btnScissor = document.querySelector('.scissors');
+  const machine = document.querySelector('.playertwooutput');
+  
+  const result = document.querySelector('.win');
+  const pOneScore = document.querySelector('.p1');
+  const pTwoScore = document.querySelector('.p2');
+  
+  const gameOver = document.querySelector('.output-container');
+  const playAgain = document.querySelector('.tryagain');
+
+  const cycle = function() {    
 
     const playerOneOptions = [btnRock, btnPaper, btnScissor];
     const playerTwoOptions = ['rock', 'paper', 'scissors'];
@@ -22,26 +29,22 @@ const playGame = function() {
 
         roundWinner(option.textContent, playerTwoChoice)
         if (playerOneScore === firstToFive || playerTwoScore === firstToFive){
-        gameResult()
+        gameResult(playerOneScore, playerTwoScore)        
         }
         
       })
     })
   }
 
-  const roundWinner = function(human, comp) {
-    
-    const result = document.querySelector('.win');
-    const pOneScore = document.querySelector('.p1');
-    const pTwoScore = document.querySelector('.p2');
+  const roundWinner = function(human, comp) {    
 
     human = human.toLowerCase();
     console.log(human, comp);
     comp = comp.toLowerCase();
 
     if (human === comp) {
-      return result.textContent = "DRAWZIES!!";
-    } if (
+      result.textContent = "DRAWZIES!!";
+    } else if (
       (human === 'rock' && comp === 'scissors') ||
       (human === 'paper' && comp === 'rock') ||
       (human === 'scissors' && comp === 'paper')
@@ -49,7 +52,6 @@ const playGame = function() {
       result.textContent = 'PLAYER ONE WINS!';
       playerOneScore++;
       pOneScore.textContent = playerOneScore;
-      return
     } else {
       result.textContent = 'PLAYER TWO WINS!';
       playerTwoScore++;
@@ -57,24 +59,25 @@ const playGame = function() {
     }
      
   }
-  const gameResult = function(playerOneScore, playerTwoScore) {
-    const gameOver = document.querySelector('.output-container');
-    const playAgain = document.querySelector('.tryagain');
-    const p2 = document.querySelector('.score');
+  const gameResult = function(playerOneScore, playerTwoScore,) {
 
-    console.log(playerOneScore, playerTwoScore);
-    if (playerOneScore > playerTwoScore && playerOneScore >= 5) {
+    function disableButtons() {
+      btnRock.disabled = true;
+      btnPaper.disabled = true;
+      btnScissor.disabled = true;
+      playAgain.style.opacity = "1"
+    }
+
+    if (playerOneScore > playerTwoScore) {      
       gameOver.style.fontSize = '70px';
-      gameOver.style.verticalAlign = 'center';
       gameOver.style.paddingBottom = '70px';
       gameOver.textContent = "PLAYER ONE WINS";
-      playAgain.style.opacity = "1"
-    }else {
-      gameOver.style.fontSize = '70px';
-      gameOver.style.verticalAlign = 'center';
-      gameOver.style.paddingBottom = '70px';
-      gameOver.textContent = `PLAYER TWO WINS`;
-      playAgain.style.opacity = "1"
+      disableButtons()
+    }else if (playerTwoScore > playerOneScore) {
+      result.textContent = "PLAYER TWo WIN!";
+      pOneScore.textContent = "LOOSER!";
+      pTwoScore.textContent = "HA HA HA";
+      disableButtons()
     }
     playAgain.addEventListener('click', () => window.location.reload())
   }
