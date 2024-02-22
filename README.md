@@ -78,4 +78,90 @@ Required changes
       4 The outcome should then be the input for the score at the bottom
 --Ok lets try and do point 1
 
+Old code
+
+const btnRock = document.querySelector('.rock');
+const btnPaper = document.querySelector('.paper');
+const btnScissor = document.querySelector('.scissors')
+
+
+
+const random = function () {
+  const select0 = "rock";
+  const select1 = "paper";
+  const select2 = "scissor";
+  const selector = Math.trunc(Math.random() * 3);
+
+  if (selector === 1) {
+    return select0;
+  } else if (selector === 2) {
+    return select1;
+  } else return select2;
+}
+
+const compareChoices = function() {
+    if (playerChoice === computerChoice) {
+      return "It's a draw!";
+    } else if (
+      (playerChoice === 'rock' && computerChoice === 'scissor') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissor' && computerChoice === 'paper')
+    ) {
+      return 'Player One wins!';
+    } else {
+      return 'Computer wins!';
+    }
+  }
+  compareChoices()
+
+btnRock.addEventListener('click', function() {
+  const playerOneRock = btnRock.textContent.trim().toLocaleLowerCase();
+  
+  const getComputerChoice = function () {
+    return random();
+  }
+  let cmpSelect =  getComputerChoice()
+  console.log(playerOneRock)
+  console.log(cmpSelect)
+  const result = function() {
+    return compareChoices;
+  }
+})
+
+btnPaper.addEventListener('click', function() {
+  const playerOnePaper = btnPaper.textContent.trim().toLocaleLowerCase();
+  
+  const getComputerChoice = function () {
+    return random();
+  }
+  let cmpSelect =  getComputerChoice()
+  console.log(playerOnePaper);
+  console.log(cmpSelect);
+  if (playerOnePaper === cmpSelect) {
+    console.log("It's a draw!");
+  } else if (cmpSelect === 'scissor') {
+    console.log('Computer wins!');
+  } else {
+    console.log('Player One wins!');
+  }
+})
+
+btnScissor.addEventListener('click', function() {
+  const playerOneScissor = btnScissor.textContent.trim().toLocaleLowerCase();
+  
+  const getComputerChoice = function () {
+    return random()
+  }
+  let cmpSelect =  getComputerChoice()
+  console.log(playerOneScissor)
+  console.log(cmpSelect)
+  if (playerOneScissor === cmpSelect) {
+    console.log("It's a draw!");
+  } else if (cmpSelect === 'rock') {
+    console.log('Computer wins!');
+  } else {
+    console.log('Player One wins!');
+  }
+})
+
 

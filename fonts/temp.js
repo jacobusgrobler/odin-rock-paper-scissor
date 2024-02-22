@@ -1,68 +1,135 @@
-function playGame() {
-
-    const getPlayerChoice = function () {
-        const str = prompt();
-        return str.toLowerCase();
-      };
-      let playerSelection = getPlayerChoice();
-
-      const getComputerChoice = function () {
-        const select0 = "rock";
-        const select1 = "paper";
-        const select2 = "scissor";
-      
-        const selector = Math.trunc(Math.random() * 3);
-      
-        if (selector === 1) {
-          return select0;
-        } else if (selector === 2) {
-          return select1;
-        } else return select2;
-      };
-      let computerSelection = getComputerChoice();
 
 
-      let humanScore = 0;
-      let computerScore = 0;
-      
-      
-      //function playRound(player, computer) {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
-    // alert(`Human is ${player},Computer is ${computer}`)
-
-     if (player === computer) {
-      return "Drawzies"
-     }else if (
-                (player === "rock" && computer === "scissors") ||
-                (player === "scissors" && computer === "paper") ||
-                (player === "paper" && computer === "rock")
-              ) 
-              {
-                humanScore = humanScore +1;
-                
-      
-     }else if (
-                (player === "scissor" && computer === "rock") ||
-                (player === "paper" && computer === "scissor") ||
-                (player === "rock" && computer === "paper")
-              )          
-              {
-                computerScore = computerScore +1;}       
-     
-    }    
-    
-    for (let i = 0; i <= 5; i++) {
-      console.log(playRound(getPlayerChoice(), getComputerChoice()))
-    } 
-    
-    if (humanScore > computerScore) {
-        console.log(`${humanScore} | ${computerScore} Suck it computer you lucked out` )
-    } if (humanScore < computerScore) {
-      console.log(`${computerScore} | ${humanScore} Suck it human you lucked out` )
-    } else {console.log(`Drawzies Final`)}
-    
-   
+  // Complete logic of game inside this function
+const game = () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    let moves = 0;
+ 
+ 
+    // Function to 
+    const playGame = () => {
+        const rockBtn = document.querySelector('.rock');
+        const paperBtn = document.querySelector('.paper');
+        const scissorBtn = document.querySelector('.scissor');
+        const playerOptions = [rockBtn, paperBtn, scissorBtn];
+        const computerOptions = ['rock', 'paper', 'scissors']
+ 
+        // Function to start playing game
+        playerOptions.forEach(option => {
+            option.addEventListener('click', function () {
+ 
+                const movesLeft = document.querySelector('.movesleft');
+                moves++;
+                movesLeft.innerText = `Moves Left: ${10 - moves}`;
+ 
+ 
+                const choiceNumber = Math.floor(Math.random() * 3);
+                const computerChoice = computerOptions[choiceNumber];
+ 
+                // Function to check who wins
+                winner(this.innerText, computerChoice)
+ 
+                // Calling gameOver function after 10 moves
+                if (moves == 10) {
+                    gameOver(playerOptions, movesLeft);
+                }
+            })
+        })
+ 
+    }
+ 
+    // Function to decide winner
+    const winner = (player, computer) => {
+      console.log(player, computer)
+        const result = document.querySelector('.result');
+        const playerScoreBoard = document.querySelector('.p-count');
+        const computerScoreBoard = document.querySelector('.c-count');
+        player = player.toLowerCase();
+        computer = computer.toLowerCase();
+        if (player === computer) {
+            result.textContent = 'Tie'
+        }
+        else if (player == 'rock') {
+            if (computer == 'paper') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+ 
+            } else {
+                result.textContent = 'Player Won'
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'scissors') {
+            if (computer == 'rock') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player == 'paper') {
+            if (computer == 'scissors') {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+    }
+ 
+    // Function to run when game is over
+    const gameOver = (playerOptions, movesLeft) => {
+ 
+        const chooseMove = document.querySelector('.move');
+        const result = document.querySelector('.result');
+        const reloadBtn = document.querySelector('.reload');
+ 
+        playerOptions.forEach(option => {
+            option.style.display = 'none';
+        })
+ 
+ 
+        chooseMove.innerText = 'Game Over!!'
+        movesLeft.style.display = 'none';
+ 
+        if (playerScore > computerScore) {
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Won The Game'
+            result.style.color = '#308D46';
+        }
+        else if (playerScore < computerScore) {
+            result.style.fontSize = '2rem';
+            result.innerText = 'You Lost The Game';
+            result.style.color = 'red';
+        }
+        else {
+            result.style.fontSize = '2rem';
+            result.innerText = 'Tie';
+            result.style.color = 'grey'
+        }
+        reloadBtn.innerText = 'Restart';
+        reloadBtn.style.display = 'flex'
+        reloadBtn.addEventListener('click', () => {
+            window.location.reload();
+        })
+    }
+ 
+ 
+    // Calling playGame function inside game
+    playGame();
+ 
 }
-
-  playGame()
+ 
+// Calling the game function
+game();
