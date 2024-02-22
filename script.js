@@ -70,7 +70,7 @@ const playGame = function() {
 
     if (playerOneScore > playerTwoScore) {      
       gameOver.style.fontSize = '70px';
-      gameOver.style.paddingBottom = '70px';
+      gameOver.style.paddingBottom = '100px';
       gameOver.textContent = "PLAYER ONE WINS";
       disableButtons()
     }else if (playerTwoScore > playerOneScore) {
