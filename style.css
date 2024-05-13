@@ -63,17 +63,14 @@
     font-size: 18px;
 }
 .rock{
-    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .paper{
-    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right, rgb(67, 70, 220), rgb(230, 90, 80));
 }
 .scissors{
-    /* border: 2px solid black; */
     padding: 5px;
     background-image: linear-gradient(to bottom right,rgb(67, 70, 220), rgb(230, 90, 80));
 }
@@ -108,4 +105,12 @@
 .winner{
     border: 2px solid rgb(105, 5, 5);
     padding: 5px;
+}
+
+@media only screen 
+and (min-width: 240px) 
+and (max-width: 767px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    
 }
