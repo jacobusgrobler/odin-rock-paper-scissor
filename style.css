@@ -27,7 +27,6 @@
 }
 
 .button-container{
-    /* border: 2px solid black; */
     margin: 10px 200px 10px 200px;
     padding: 5px;
     display: flex;
@@ -112,5 +111,36 @@ and (min-width: 240px)
 and (max-width: 767px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
-    
+   .body-container {
+        padding-top: 5%; /* Reduce padding */
+        padding-right: 5%; /* Reduce padding */
+        padding-left: 5%; /* Reduce padding */
+    }
+   .heading {
+        font-size: 60px; /* Adjust font size */
+    }
+   .button-container {
+        margin: 5px 100px 5px 100px; /* Adjust margins */
+    }
+   .tryagain {
+        margin-left: -50px; /* Adjust margin */
+        font-size: 14px; /* Adjust font size */
+    }
+   .horizontal {
+        padding: 30px; /* Adjust padding */
+    }
+   .btn {
+        min-height: 80px; /* Adjust min-height */
+        min-width: 80px; /* Adjust min-width */
+        font-size: 14px; /* Adjust font size */
+    }
+   .output-container {
+        margin: 5px 100px 20px 100px; /* Adjust margins */
+    }
+   .playertwooutput,
+   .player1,
+   .player2,
+   .winner {
+        padding: 3px; /* Adjust padding */
+    }
 }
