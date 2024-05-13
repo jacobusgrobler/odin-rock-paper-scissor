@@ -2,6 +2,7 @@
     padding: 1px;
     margin: 1px;
     font-family: crackman;
+    overflow-x: hidden;
 }
 
 @font-face {
