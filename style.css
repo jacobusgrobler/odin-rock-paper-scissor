@@ -133,8 +133,9 @@ and (orientation: portrait) {
    .btn {
         min-height: 80px; /* Adjust min-height */
         min-width: 80px; /* Adjust min-width */
+        max-height: 80px;
+        min-width: 80px;
         font-size: 14px; /* Adjust font size */
-        padding-right: 100px;
     }
    .output-container {
         margin: 5px 100px 20px 100px; /* Adjust margins */
