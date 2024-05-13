@@ -124,7 +124,7 @@ and (orientation: portrait) {
         margin: 5px 100px 5px 100px; /* Adjust margins */
     }
    .tryagain {
-        margin-left: -50px; /* Adjust margin */
+        margin-left: 50px; /* Adjust margin */
         font-size: 14px; /* Adjust font size */
     }
    .horizontal {
@@ -134,6 +134,7 @@ and (orientation: portrait) {
         min-height: 80px; /* Adjust min-height */
         min-width: 80px; /* Adjust min-width */
         font-size: 14px; /* Adjust font size */
+        position: relative;
     }
    .output-container {
         margin: 5px 100px 20px 100px; /* Adjust margins */
