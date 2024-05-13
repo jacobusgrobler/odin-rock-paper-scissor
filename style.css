@@ -134,7 +134,7 @@ and (orientation: portrait) {
         min-height: 80px; /* Adjust min-height */
         min-width: 80px; /* Adjust min-width */
         font-size: 14px; /* Adjust font size */
-        position: relative;
+        position: absolute;
     }
    .output-container {
         margin: 5px 100px 20px 100px; /* Adjust margins */
