@@ -128,7 +128,8 @@ and (orientation: portrait) {
         font-size: 14px; /* Adjust font size */
     }
    .horizontal {
-        position: absolute; /* Adjust padding */
+        position: inherit; /* Adjust padding */
+        padding-bottom: 20px;
     }
    .btn {
         min-height: 80px; /* Adjust min-height */
