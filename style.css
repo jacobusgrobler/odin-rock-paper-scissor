@@ -2,7 +2,6 @@
     padding: 1px;
     margin: 1px;
     font-family: crackman;
-    overflow-x: hidden;
 }
 
 @font-face {
@@ -116,6 +115,7 @@ and (orientation: portrait) {
         padding-top: 5%; /* Reduce padding */
         padding-right: 5%; /* Reduce padding */
         padding-left: 5%; /* Reduce padding */
+        overflow-x: hidden;
     }
    .heading {
         font-size: 60px; /* Adjust font size */
